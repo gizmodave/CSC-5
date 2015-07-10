@@ -40,8 +40,10 @@ int main(int argc, char** argv) {
     char ans;
     do {//The loop returns you here.
         //Type your input here.
+        cout << "Would you like to see todays horoscope?\n";
         cout << "Please enter the month and day of your birthday.\n";
-        cout << "Month: ";
+        cout << "Example: Month: 3 and Day: 12\n";
+        cout << "\nMonth: ";
         cin>>month;
         cout << "\nDay: ";
         cin>>day;
@@ -242,8 +244,8 @@ int main(int argc, char** argv) {
             }
         }            
         //Pisces February 19–March 20
-        else if ((month == 2 && day >= 19 && day <= 31) ||
-                (month == 3 && day >= 1 && day <= 20)) {
+        else if ((month == 2 && day >= 19 && day <= 31) || 
+                 (month == 3 && day >= 1 && day <= 20)) {
             cout << "\nPisces\n";
             cout << "Your hard work will soon pay off today.\n";
             //Check to see if you are within 2 days of next months horoscopes.
