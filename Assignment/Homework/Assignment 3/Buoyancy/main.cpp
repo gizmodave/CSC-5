@@ -15,18 +15,23 @@ using namespace std;
 //Global constants
 
 //Function prototypes
-
+float buoyncy(float y, float vol) {
+    float bouyant;
+    bouyant = y*vol;
+    return bouyant;
+}
 int main(int argc, char** argv) {
     //declare variables
     float feet,
+            pi=3.1415,
             weight,
             buoyant,
             comp,
             y=62.4,
-            vol =(4/3)*3.1415*rad*rad*rad,
-            diam,
-            rad;
-    
+            objwght,
+            vol;
+            
+    char ans;
     do{
         cout << "Please enter the weight in lb and the radius in feet of \n";
         cout << "the sphere that you want to test.\n";
@@ -36,16 +41,23 @@ int main(int argc, char** argv) {
         cout << "Radius ft: ";
         cin >> feet;
         
-   
-        diam=2*feet;
-        rad=diam/2;
-        buoyant=vol*y;
-        comp=
         
-        
-        
-                
+        vol = 4/3 * pi*feet*feet*feet;
+        objwght=weight/3;
+    //output answer
+    cout << "Buoyancy: " << buoyncy(y, vol) << " Sphere weight: "
+            <<objwght<< " Volume: " << vol << " ft^3 "<< endl;
+    if (buoyncy(y, vol) >= objwght)
+        cout << "\nIt floats.\n";
+    else if (buoyncy(y, vol) < objwght) {
+        cout << "\nIts going to sink.\n";
+                  
     }
+    cout<<"\nwould you like to check another sphere? Y/N\n";
+    cin>>ans;
+    }
+    while(ans == 'y'|| ans == 'Y');
+    cout<<"\nGood bye.";
 
     return 0;
 }

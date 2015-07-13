@@ -22,22 +22,18 @@ float buoyncy(float y, float vol) {
 int main(int argc, char** argv) {
     //declare variables
     float pi = 3.1415,
-            feet = 1,
-            weight = 78,
-            y,
-            density,
-            vol;
+            feet=.333,
+            weight= .10125,
+            vol,
             y = 62.4;
-            
-    vol = (1.33 * pi) * feet * feet*feet;
-    density=weight/vol;
+    
+    vol = 4/3 * pi*feet*feet*feet;
     //output answer
     cout << "Buoyancy: " << buoyncy(y, vol) << " Sphere weight: "
-            <<density<<".lb"
-            << " Volume: " << vol << "ft^3 "<< endl;
-    if (buoyncy(y, vol) >= density)
+            <<weight<< " Volume: " << vol << " ft^3 "<< endl;
+    if (buoyncy(y, vol) >= weight)
         cout << "It floats";
-    else if (buoyncy(y, vol) < density) {
+    else if (buoyncy(y, vol) < weight) {
         cout << "Its going to sink.";
     }
     return 0;
